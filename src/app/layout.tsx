@@ -44,9 +44,9 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning={true}>
+        <html lang="en" suppressHydrationWarning>
             <body className={cn(inter.className, 'h-screen w-screen overflow-hidden')}>
-                <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
+                <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
                     <main className="relative flex h-full w-full flex-col bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-400">
                         <Header className="p-2 text-xs md:px-6 md:text-sm" />
                         <Suspense
@@ -58,7 +58,7 @@ export default function RootLayout({
                         >
                             <div className="h-full overflow-scroll">{children}</div>
                         </Suspense>
-                        <Footer className="px-4 py-1.5 text-xs md:px-6" />
+                        <Footer className="px-2 py-1.5 text-xs md:px-6" />
                     </main>
                 </ThemeProvider>
             </body>

@@ -1,5 +1,10 @@
+'use client'
+
+import { useSearchParams } from 'next/navigation'
 import SafeLinks from '@/components/SafeLinks'
 
 export default function Page() {
-    return <SafeLinks />
+    const searchParams = useSearchParams()
+    const urlAddress = searchParams.get('address')
+    return <SafeLinks urlAddress={urlAddress} />
 }

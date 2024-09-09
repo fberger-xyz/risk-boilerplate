@@ -2,8 +2,8 @@
 
 import Button from '@/components/common/Button'
 import PageWrapper from '@/components/common/PageWrapper'
-import HeaderButton from '@/components/layouts/HeaderButton'
-import { AppPagePaths } from '@/enums'
+// import HeaderButton from '@/components/layouts/HeaderButton'
+// import { AppPagePaths } from '@/enums'
 import { useEffect } from 'react'
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
@@ -17,7 +17,7 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
             <div className="m-auto flex flex-col items-center gap-10">
                 <h2>Something went wrong!</h2>
                 <Button onClickFn={() => reset()} text="Reload page" />
-                <HeaderButton pagePath={AppPagePaths.HOME} />
+                {/* <HeaderButton pagePath={AppPagePaths.HOME} /> */}
             </div>
         </PageWrapper>
     )

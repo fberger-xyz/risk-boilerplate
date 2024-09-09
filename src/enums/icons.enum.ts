@@ -23,11 +23,13 @@ export enum IconIds {
 
     // theme
     THEME_LIGHT = 'carbon:sun',
-    THEME_DARK = 'carbon:moon',
+    // THEME_DARK = 'carbon:moon',
+    THEME_DARK = 'mdi:weather-night',
     THEME_UNKNOWN = 'carbon:unknown',
 
     // hugeicons
     X = 'hugeicons:new-twitter',
-    DISCORD = 'hugeicons:discord',
-    GITHUB = 'hugeicons:github',
+    DISCORD = 'ic:round-discord',
+    GITHUB = 'mdi:github',
+    WEBSITE = 'carbon:information',
 }

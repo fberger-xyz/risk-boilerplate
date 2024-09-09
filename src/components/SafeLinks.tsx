@@ -2,30 +2,25 @@
 
 import Image from 'next/image'
 import PageWrapper from './common/PageWrapper'
-import { useTheme } from 'next-themes'
 import { cn } from '@/utils'
-import { AppThemes, IconIds } from '@/enums'
 import { useAppStore } from '@/stores/app.store'
 import { linksGroupedByCategories, linkWithAddress } from '@/data/links'
 import IconWrapper from './common/IconWrapper'
-import { Tooltip } from 'react-tooltip'
 import LinkWrapper from './common/LinkWrapper'
+import { platformIndexes } from '@/config/app.config'
+import { IconIds } from '@/enums'
 
-export default function SafeLinks() {
-    const { resolvedTheme } = useTheme()
+export default function SafeLinks({ urlAddress }: { urlAddress: string | null }) {
     const { address, actions } = useAppStore()
     return (
-        <PageWrapper className="w-full items-center justify-center">
+        <PageWrapper>
             <div className="flex w-full flex-col gap-1">
-                <p className="text-xs">Multisig address</p>
+                <p className="text-xs">Safe address</p>
                 <input
                     type="text"
-                    defaultValue={address}
+                    defaultValue={urlAddress ?? address}
                     placeholder="Enter a safe address"
-                    className={cn('h-10 w-full py-0.5 pl-2 border', {
-                        'bg-gray-200 border-gray-100': resolvedTheme === AppThemes.LIGHT,
-                        'bg-gray-800 border-gray-600 rounded-sm': resolvedTheme === AppThemes.DARK,
-                    })}
+                    className="h-10 w-full border border-gray-100 bg-gray-200 py-0.5 pl-2 text-sm dark:rounded-sm dark:border-gray-600 dark:bg-gray-800"
                     min={0}
                     step={1}
                     onChange={(event) => actions.setAddress(String(event.target.value.trim()))}
@@ -35,29 +30,17 @@ export default function SafeLinks() {
             {/* categories */}
             <div className="flex w-full flex-col gap-5">
                 {linksGroupedByCategories.map((category, categoryIndex) => (
-                    <div
-                        key={`${categoryIndex}-${category.name}`}
-                        className={cn('flex flex-col gap-2 w-full', {
-                            'border-gray-100': resolvedTheme === AppThemes.LIGHT,
-                            'border-gray-800': resolvedTheme === AppThemes.DARK,
-                        })}
-                    >
+                    <div key={`${categoryIndex}-${category.name}`} className="flex w-full flex-col gap-2 border-gray-100 dark:border-gray-800">
                         {/* links */}
                         <div className="flex flex-col gap-1">
                             <p className="text-xs">{category.name}</p>
                             {category.links.map((link, linkIndex) => (
                                 <div
                                     key={`${linkIndex}-${link.name}`}
-                                    className={cn(
-                                        'flex items-center justify-between px-2 py-1.5 gap-3 border w-full relative overflow-hidden group transition-all',
-                                        {
-                                            'bg-gray-100 border-gray-200 hover:bg-gray-200': resolvedTheme === AppThemes.LIGHT,
-                                            'bg-gray-900 border-gray-800 hover:bg-gray-800': resolvedTheme === AppThemes.DARK,
-                                        },
-                                    )}
+                                    className="group relative flex w-full items-center justify-between gap-3 overflow-hidden border border-gray-200 bg-white p-1.5 transition-all hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-600"
                                 >
                                     <div
-                                        className="group:hover:blur-0 absolute inset-0 h-full w-full blur-sm transition-all group-hover:blur-none"
+                                        className="group:hover:blur-0 absolute inset-0 h-full w-full blur-[1px] transition-all group-hover:blur-none"
                                         style={{
                                             backgroundImage: `url('${link.bannerUrl}')`,
                                             backgroundPosition: 'center',
@@ -66,32 +49,19 @@ export default function SafeLinks() {
                                             // filter: 'blur(8px)',
                                         }}
                                     />
-                                    <div
-                                        className={cn('absolute inset-0 z-10 h-full w-full transition-all', {
-                                            'bg-gray-200/90 group-hover:bg-gray-200/80': resolvedTheme === AppThemes.LIGHT,
-                                            'bg-gray-950/95 group-hover:bg-gray-950/80': resolvedTheme === AppThemes.DARK,
-                                        })}
-                                    />
+                                    <div className="absolute inset-0 z-10 h-full w-full bg-gray-200/90 transition-all group-hover:bg-gray-200/80 dark:bg-gray-950/95 dark:group-hover:bg-gray-950/80" />
                                     <div className="z-20 flex items-center gap-3">
-                                        <Image src={link.iconUrl} width={35} height={35} alt={link.name} />
-                                        <div className="flex flex-col gap-1">
-                                            <div className="flex items-center gap-1">
-                                                <p
-                                                    className={cn('font-bold pr-2', {
-                                                        'text-black': resolvedTheme === AppThemes.LIGHT,
-                                                        'text-white': resolvedTheme === AppThemes.DARK,
-                                                    })}
-                                                >
-                                                    {link.name}
-                                                </p>
-                                                {link.socialProfiles.map((socialProfile) => (
-                                                    <>
+                                        <Image src={link.iconUrl} width={30} height={30} alt={link.name} />
+                                        <div className="flex flex-col">
+                                            <div className="flex items-center gap-0.5">
+                                                <p className="pr-2 text-sm font-bold text-black dark:text-white">{link.name}</p>
+                                                {link.socialProfiles
+                                                    .sort((curr, next) => platformIndexes[curr.platform] - platformIndexes[next.platform])
+                                                    .map((socialProfile) => (
                                                         <LinkWrapper
-                                                            data-tooltip-id={`${category.name}-${link.name}-${socialProfile.platform}`}
-                                                            className={cn('p-0.5 text-gray-600 hover:text-primary', {
-                                                                'group-hover:text-gray-800': resolvedTheme === AppThemes.LIGHT,
-                                                                'group-hover:text-gray-300': resolvedTheme === AppThemes.DARK,
-                                                            })}
+                                                            key={`${linkIndex}-${link.name}-${socialProfile.platform}`}
+                                                            // data-tooltip-id={`${category.name}-${link.name}-${socialProfile.platform}`}
+                                                            className="rounded-md p-0.5 text-gray-600 hover:bg-gray-100  group-hover:text-gray-700/50 dark:hover:bg-gray-800 dark:group-hover:text-gray-300/50"
                                                             href={socialProfile.url}
                                                             target="_blank"
                                                         >
@@ -103,34 +73,30 @@ export default function SafeLinks() {
                                                                           ? IconIds.DISCORD
                                                                           : socialProfile.platform === 'GITHUB'
                                                                             ? IconIds.GITHUB
-                                                                            : IconIds.CARBON_OVERFLOW_MENU_VERTICAL
+                                                                            : IconIds.WEBSITE
                                                                 }
-                                                                className={cn('h-4 w-4')}
+                                                                className={cn('h-3.5 w-3.5')}
                                                             />
-                                                        </LinkWrapper>
-                                                        <Tooltip id={`${category.name}-${link.name}-${socialProfile.platform}`} className="z-50">
+                                                            {/* <Tooltip id={`${category.name}-${link.name}-${socialProfile.platform}`} className="z-50">
                                                             <p className="text-xs text-primary">{socialProfile.url}</p>
-                                                        </Tooltip>
-                                                    </>
-                                                ))}
+                                                        </Tooltip> */}
+                                                        </LinkWrapper>
+                                                    ))}
                                             </div>
-                                            <p className="text-xs">{link.description}</p>
+                                            <p className="text-xs opacity-50 group-hover:opacity-100">{link.description}</p>
                                         </div>
                                     </div>
                                     <LinkWrapper
                                         href={linkWithAddress(link, address)}
-                                        data-tooltip-id={`${category.name}-${link.name}-url`}
-                                        className={cn('z-20 p-2 rounded-sm text-primary', {
-                                            'group-hover:bg-gray-300': resolvedTheme === AppThemes.LIGHT,
-                                            'group-hover:bg-gray-700': resolvedTheme === AppThemes.DARK,
-                                        })}
+                                        // data-tooltip-id={`${category.name}-${link.name}-url`}
+                                        className="z-20 rounded-sm p-1 hover:text-white group-hover:bg-gray-400/50 dark:group-hover:bg-gray-600/50"
                                         target="_blank"
                                     >
-                                        <IconWrapper icon={IconIds.IC_BASELINE_OPEN_IN_NEW} className={cn('h-5 w-5')} />
+                                        <IconWrapper icon={IconIds.IC_BASELINE_OPEN_IN_NEW} className={cn('h-4 w-4')} />
                                     </LinkWrapper>
-                                    <Tooltip id={`${category.name}-${link.name}-url`} className="z-50">
+                                    {/* <Tooltip id={`${category.name}-${link.name}-url`} className="z-50">
                                         <p className="text-xs">{linkWithAddress(link, address)}</p>
-                                    </Tooltip>
+                                    </Tooltip> */}
                                 </div>
                             ))}
                         </div>

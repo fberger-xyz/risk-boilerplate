@@ -8,8 +8,8 @@ export enum AppThemes {
 }
 
 export enum SafeLinkCategoryNames {
-    CUSTODY = 'Custody',
-    DEFI = 'DeFi',
+    OWN = 'Own',
+    TRADE = 'Trade',
     COORDINATE = 'Coordinate',
     TRACK = 'Track',
 }
@@ -23,4 +23,11 @@ export enum SafeLinkApps {
     DEBANK = 'DEBANK',
     ZERION = 'ZERION',
     ZAPPER = 'ZAPPER',
+}
+
+export enum SafePlatforms {
+    DISCORD = 'DISCORD',
+    GITHUB = 'GITHUB',
+    TWITTER = 'TWITTER',
+    WEBSITE = 'WEBSITE',
 }

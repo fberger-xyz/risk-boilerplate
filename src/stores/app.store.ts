@@ -26,7 +26,7 @@ export const useAppStore = create<{
     initialized: false,
     links: [
         {
-            name: 'Safe Links',
+            name: '🔗',
             path: AppPagePaths.HOME,
             enabled: true,
             sublinks: [],
