@@ -20,7 +20,7 @@ export default function SafeLinks({ urlAddress }: { urlAddress: string | null })
                     type="text"
                     defaultValue={urlAddress ?? address}
                     placeholder="Enter a safe address"
-                    className="h-10 w-full border border-gray-100 bg-gray-200 py-0.5 pl-2 text-sm dark:rounded-sm dark:border-gray-600 dark:bg-gray-800"
+                    className="h-10 w-full rounded-sm border border-gray-200 bg-transparent py-0.5 pl-2 text-sm dark:border-gray-600 dark:bg-gray-800"
                     min={0}
                     step={1}
                     onChange={(event) => actions.setAddress(String(event.target.value.trim()))}
@@ -49,7 +49,7 @@ export default function SafeLinks({ urlAddress }: { urlAddress: string | null })
                                             // filter: 'blur(8px)',
                                         }}
                                     />
-                                    <div className="absolute inset-0 z-10 h-full w-full bg-gray-200/90 transition-all group-hover:bg-gray-200/80 dark:bg-gray-950/95 dark:group-hover:bg-gray-950/80" />
+                                    <div className="absolute inset-0 z-10 h-full w-full bg-white/90 transition-all group-hover:bg-gray-200/80 dark:bg-gray-950/95 dark:group-hover:bg-gray-950/80" />
                                     <div className="z-20 flex items-center gap-3">
                                         <Image src={link.iconUrl} width={30} height={30} alt={link.name} />
                                         <div className="flex flex-col">

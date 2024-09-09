@@ -46,7 +46,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={cn(inter.className, 'h-screen w-screen overflow-hidden')}>
-                <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
+                <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
                     <main className="relative flex h-full w-full flex-col bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-400">
                         <Header className="p-2 text-xs md:px-6 md:text-sm" />
                         <Suspense
