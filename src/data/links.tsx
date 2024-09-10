@@ -3,6 +3,7 @@ import { SafeLink } from '@/interfaces'
 
 export const linkWithAddress = (link: SafeLink, address: string) => {
     if (link.app === SafeLinkApps.SAFE) return `https://app.safe.global/home?safe=eth:${address}`
+    if (link.app === SafeLinkApps.MORPHO) return `https://app.safe.global/apps/open?safe=eth:${address}&appUrl=https%3A%2F%2Fsafe-app.morpho.org%2F`
     if (link.app === SafeLinkApps.AAVE) return `https://app.safe.global/apps/open?safe=eth:${address}&appUrl=https%3A%2F%2Fapp.aave.com`
     if (link.app === SafeLinkApps.COWSWAP) return `https://app.safe.global/apps/open?safe=eth:${address}&appUrl=https%3A%2F%2Fswap.cow.fi`
     if (link.app === SafeLinkApps.ONEINCH) return `https://app.safe.global/apps/open?safe=eth:${address}&appUrl=https%3A%2F%2Fapp.1inch.io`
@@ -47,6 +48,32 @@ export const linksGroupedByCategories: { name: SafeLinkCategoryNames; links: Saf
     {
         name: SafeLinkCategoryNames.TRADE,
         links: [
+            {
+                app: SafeLinkApps.MORPHO,
+                name: 'Morpho',
+                iconUrl: 'https://pbs.twimg.com/profile_images/1712024635590455296/ksuEkiF7_400x400.jpg',
+                bannerUrl: 'https://pbs.twimg.com/profile_banners/1420789685811650560/1697013456/1080x360',
+                description: 'Earn, Borrow, Build on Morpho',
+                tags: ['DeFi', 'Lending/Borrowing'],
+                socialProfiles: [
+                    {
+                        platform: SafePlatforms.DISCORD,
+                        url: 'https://discord.com/invite/BWXbJMHMdz/',
+                    },
+                    {
+                        platform: SafePlatforms.GITHUB,
+                        url: 'https://github.com/morpho-org',
+                    },
+                    {
+                        platform: SafePlatforms.TWITTER,
+                        url: 'https://x.com/MorphoLabs',
+                    },
+                    {
+                        platform: SafePlatforms.WEBSITE,
+                        url: 'https://app.morpho.org/',
+                    },
+                ],
+            },
             {
                 app: SafeLinkApps.AAVE,
                 name: 'Aave',

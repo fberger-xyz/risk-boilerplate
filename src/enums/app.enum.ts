@@ -16,6 +16,7 @@ export enum SafeLinkCategoryNames {
 
 export enum SafeLinkApps {
     SAFE = 'SAFE',
+    MORPHO = 'MORPHO',
     AAVE = 'AAVE',
     COWSWAP = 'COWSWAP',
     ONEINCH = '1INCH',
