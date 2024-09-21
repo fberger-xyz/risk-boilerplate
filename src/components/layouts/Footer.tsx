@@ -13,19 +13,19 @@ export default function Footer(props: FooterProps) {
                     <span className="mr-1 opacity-50">UI</span>
                     <span className="font-bold">{process.env.NEXT_PUBLIC_APP_VERSION}</span>
                 </p>
-                {/* <p className="flex flex-col sm:flex-row">
+                <p className="flex flex-col sm:flex-row">
                     <span className="mr-1 opacity-50">Environment</span>
                     <span className="font-bold">{process.env.NODE_ENV}</span>
-                </p> */}
-                {/* <p className="hidden flex-col sm:flex sm:flex-row">
-                    <span className="mr-1 opacity-50">Breakpoint</span>
+                </p>
+                <p className="hidden flex-col sm:flex sm:flex-row">
+                    <span className="mr-1 opacity-50">Screen</span>
                     <span className="block font-bold sm:hidden md:hidden lg:hidden xl:hidden 2xl:hidden">xs</span>
                     <span className="hidden font-bold sm:block md:hidden lg:hidden xl:hidden 2xl:hidden">sm</span>
                     <span className="hidden font-bold sm:hidden md:block lg:hidden xl:hidden 2xl:hidden">md</span>
                     <span className="hidden font-bold sm:hidden md:hidden lg:block xl:hidden 2xl:hidden">lg</span>
                     <span className="hidden font-bold sm:hidden md:hidden lg:hidden xl:block 2xl:hidden">xl</span>
                     <span className="hidden font-bold sm:hidden md:hidden lg:hidden xl:hidden 2xl:block">2xl</span>
-                </p> */}
+                </p>
             </div>
             <div className="flex items-center gap-1">
                 <p className="opacity-50">Maintainer</p>

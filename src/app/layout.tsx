@@ -7,6 +7,7 @@ import Header from '../components/layouts/Header'
 import { Suspense } from 'react'
 import Footer from '../components/layouts/Footer'
 import { ThemeProvider } from 'next-themes'
+import ApolloProviderWrapper from '@/providers/apollo.provider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -47,19 +48,21 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className={cn(inter.className, 'h-screen w-screen overflow-hidden')}>
                 <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
-                    <main className="relative flex h-full w-full flex-col bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-400">
-                        <Header className="p-2 text-xs md:px-6 md:text-sm" />
-                        <Suspense
-                            fallback={
-                                <div className="flex h-full w-full items-center justify-center">
-                                    <p className="text-orange-400">App loading...</p>
-                                </div>
-                            }
-                        >
-                            <div className="h-full overflow-scroll">{children}</div>
-                        </Suspense>
-                        <Footer className="px-2 py-1.5 text-xs md:px-6" />
-                    </main>
+                    <ApolloProviderWrapper>
+                        <main className="relative flex h-full w-full flex-col bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-400">
+                            <Header className="p-2 text-xs md:px-6 md:text-sm" />
+                            <Suspense
+                                fallback={
+                                    <div className="flex h-full w-full items-center justify-center">
+                                        <p className="text-orange-400">App loading...</p>
+                                    </div>
+                                }
+                            >
+                                <div className="h-full overflow-scroll">{children}</div>
+                            </Suspense>
+                            <Footer className="p-2 text-xs md:p-4" />
+                        </main>
+                    </ApolloProviderWrapper>
                 </ThemeProvider>
             </body>
         </html>

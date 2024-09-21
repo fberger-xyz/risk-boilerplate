@@ -23,7 +23,6 @@ export enum IconIds {
 
     // theme
     THEME_LIGHT = 'carbon:sun',
-    // THEME_DARK = 'carbon:moon',
     THEME_DARK = 'mdi:weather-night',
     THEME_UNKNOWN = 'carbon:unknown',
 
@@ -32,4 +31,8 @@ export enum IconIds {
     DISCORD = 'ic:round-discord',
     GITHUB = 'mdi:github',
     WEBSITE = 'carbon:information',
+
+    // evm
+    TRANSACTION = 'carbon:text-align-center',
+    CONTRACT = 'carbon:cics-program',
 }

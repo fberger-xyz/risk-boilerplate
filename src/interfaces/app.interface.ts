@@ -1,4 +1,4 @@
-import { AppPagePaths, IconIds, SafeLinkApps, SafePlatforms } from '../enums'
+import { AppPagePaths, IconIds } from '../enums'
 
 export interface InterfaceAppLink {
     name: string
@@ -12,17 +12,4 @@ export interface InterfaceAppLink {
 export interface APIResponse<Data> {
     data?: Data
     error: string
-}
-
-export interface SafeLink {
-    app: SafeLinkApps
-    name: string
-    iconUrl: string
-    bannerUrl: string
-    description: string
-    tags: string[]
-    socialProfiles: {
-        platform: SafePlatforms
-        url: string
-    }[]
 }
