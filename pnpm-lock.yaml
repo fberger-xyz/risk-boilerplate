@@ -82,6 +82,9 @@ devDependencies:
   '@iconify/react':
     specifier: ^5.0.2
     version: 5.0.2(react@18.0.0)
+  '@morpho-org/blue-sdk':
+    specifier: 1.10.1-alpha.1
+    version: 1.10.1-alpha.1(@morpho-org/morpho-ts@1.10.1-alpha.1)
   '@next/eslint-plugin-next':
     specifier: ^14.2.8
     version: 14.2.8
@@ -1652,7 +1655,6 @@ packages:
     dependencies:
       '@morpho-org/morpho-ts': 1.10.1-alpha.1
       keccak256: 1.0.6
-    dev: false
 
   /@morpho-org/morpho-blue@1.0.0:
     resolution: {integrity: sha512-MKtzYMRE65B1hVJYAPtml3ecHPY2e/SL3JRvM7XWjtbnWQX6U/C3beSdxr7v+rHaVJ0ri/dUPxvNfWtr0NZdGw==}
@@ -1667,7 +1669,6 @@ packages:
 
   /@morpho-org/morpho-ts@1.10.1-alpha.1:
     resolution: {integrity: sha512-ol2PeYQlmS12Qf8Pf3yboJMBdyHYXAolOxcB7GXTphweogf96HamBIn8z7gxtk+ASnmBPrz1jlMuUsos1zk/nw==}
-    dev: false
 
   /@next/env@14.2.5:
     resolution: {integrity: sha512-/zZGkrTOsraVfYjGP8uM0p6r0BDT6xWpkjdVbcz66PJVSpwXX3yNiRycxAuDfBKGWBrZBXRuK/YVlkNgxHGwmA==}
@@ -2433,7 +2434,6 @@ packages:
 
   /bn.js@5.2.1:
     resolution: {integrity: sha512-eXRvHzWyYPBuB4NBy0cmYQjGitUrtqwbvlzP3G6VFnNRbsZQIxQ10PbKKHt8gZ/HW/D/747aDl+QkDqg3KQLMQ==}
-    dev: false
 
   /brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -2483,7 +2483,6 @@ packages:
     dependencies:
       base64-js: 1.5.1
       ieee754: 1.2.1
-    dev: false
 
   /busboy@1.6.0:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
@@ -4459,7 +4458,6 @@ packages:
       bn.js: 5.2.1
       buffer: 6.0.3
       keccak: 3.0.4
-    dev: false
 
   /keccak@3.0.4:
     resolution: {integrity: sha512-3vKuW0jV8J3XNTzvfyicFR5qvxrSAGl7KIhvgOu5cmWwM7tZRj3fMbj/pfIf4be7aznbc+prBWGjywox/g2Y6Q==}
@@ -4469,7 +4467,6 @@ packages:
       node-addon-api: 2.0.2
       node-gyp-build: 4.8.2
       readable-stream: 3.6.2
-    dev: false
 
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
@@ -4748,7 +4745,6 @@ packages:
 
   /node-addon-api@2.0.2:
     resolution: {integrity: sha512-Ntyt4AIXyaLIuMHF6IOoTakB3K+RWxwtsHNRxllEoA6vPwP9o4866g6YWDLUdnucilZhmkxiHwHr11gAENw+QA==}
-    dev: false
 
   /node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -4765,7 +4761,6 @@ packages:
   /node-gyp-build@4.8.2:
     resolution: {integrity: sha512-IRUxE4BVsHWXkV/SFOut4qTlagw2aM8T5/vnTsmrHJvVoKueJHRc/JaFND7QDDc61kLYUJ6qlZM3sqTSyx2dTw==}
     hasBin: true
-    dev: false
 
   /node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}

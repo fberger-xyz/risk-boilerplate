@@ -95,7 +95,7 @@ export default function Page() {
                 </LinkWithIcon>
 
                 {/* 2 */}
-                <p className="text-primary">2 - Accept the cap ⌛ (end of timelock sunday afternoon)</p>
+                <p className="text-primary">2 - Accept the cap ✅</p>
                 <PreJson>
                     {JSON.stringify(
                         {
@@ -109,36 +109,39 @@ export default function Page() {
                         2,
                     )}
                 </PreJson>
-                <LinkWithIcon href="https://basescan.org/tx/0x28e43dc1402cbc6675836a89ae8b9a21a12450ac8e0b68cfb266e5c0797d4194">
+                <LinkWithIcon href="https://basescan.org/tx/0x5d4786d103f471c0f5b1e3bdc1e7449d2748d5026605f6b6e9b47429753ef042">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>acceptCap tx hash</p>
                 </LinkWithIcon>
-                <p className="text-red-500">Error Message: TimelockNotElapsed[]</p>
-                <p className="text-red-500">if (block.timestamp {'<'} validAt) revert ErrorsLib.TimelockNotElapsed();</p>
-                <p className="text-red-500">
-                    https://dashboard.tenderly.co/tx/base/0x28e43dc1402cbc6675836a89ae8b9a21a12450ac8e0b68cfb266e5c0797d4194
-                </p>
 
                 {/* 3 */}
                 <p className="text-primary">3 - Set the Supply Queue ⌛</p>
                 <PreJson>{JSON.stringify([ZRO_USDC_CONFIG.marketId], null, 2)}</PreJson>
-                {/* <LinkWithIcon href="https://basescan.org/tx/tba">
+                <LinkWithIcon href="https://basescan.org/tx/0x492047f0d183490d091844dcf88b19de2201c06d8bbde5a973c566764e7270b7">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>setSupplyQueue tx hash</p>
-                </LinkWithIcon> */}
+                </LinkWithIcon>
 
                 {/* 4 */}
-                <p className="text-primary">4 - Deposit ⌛</p>
-                {/* <PreJson>{JSON.stringify([marketId], null, 2)}</PreJson> */}
-                {/* <LinkWithIcon href="https://basescan.org/tx/tba">
+                <p className="text-primary">4 - Deposit ✅</p>
+                <p className="text-secondary">YT tutorial: https://www.youtube.com/watch?v=ljfKw-oadQ4&t=63s</p>
+                <LinkWithIcon href="https://basescan.org/tx/0xd602eb5961a56916569f79b737eebe7f2b8977abcb3ab43f35e2397066bd223d">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
-                    <p>deposit tx hash</p>
-                </LinkWithIcon> */}
+                    <p>Approve vault for 10 ZRO tx hash</p>
+                </LinkWithIcon>
+                <LinkWithIcon href="https://basescan.org/tx/0x50cc4ce7e9bb98e3f3016968f30212e36c1d3b81e73abdfa0d73b04f29b59e47">
+                    <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
+                    <p>Approve vault for 10 USDC tx hash</p>
+                </LinkWithIcon>
+                <LinkWithIcon href="https://basescan.org/tx/0x7d22d362ecc03506f846e22b439e69f2a700bc26bef7ec178a43c8c94196251c">
+                    <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
+                    <p>deposit 1 USDC tx hash</p>
+                </LinkWithIcon>
             </div>
 
             {/* step */}
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
-                <p className="font-bold">...</p>
+                <p className="font-bold">Become a curator / ...</p>
             </div>
         </PageWrapper>
     )

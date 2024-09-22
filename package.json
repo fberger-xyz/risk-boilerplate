@@ -40,6 +40,7 @@
     "@graphql-codegen/typescript-operations": "^4.2.3",
     "@graphql-codegen/typescript-react-apollo": "^4.3.2",
     "@iconify/react": "^5.0.2",
+    "@morpho-org/blue-sdk": "1.10.1-alpha.1",
     "@next/eslint-plugin-next": "^14.2.8",
     "@types/node": "^20",
     "@types/numeral": "^2.0.5",

@@ -94,6 +94,10 @@ export default function Page() {
                     <p>createMarket tx hash</p>
                 </LinkWithIcon>
                 <p className="text-primary">ZRO/USDC market id = {ZRO_USDC_CONFIG.marketId}</p>
+                <LinkWithIcon href="https://app.morpho.org/market?id=0xd996fbbdd018256dbc80d779d64935bd639227d9ded7965c467a09a94230a4d6&network=base&morphoPrice=0.0">
+                    <IconWrapper icon={IconIds.WEBSITE} className="h-4 w-4" />
+                    <p>UI for market</p>
+                </LinkWithIcon>
             </div>
 
             {/* step */}
@@ -108,12 +112,37 @@ export default function Page() {
 
             {/* step */}
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
-                <p className="font-bold">...</p>
+                <p className="font-bold">Manage positions 📝</p>
             </div>
 
             {/* step */}
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
-                <p className="font-bold">📝 API</p>
+                <p className="font-bold">Rates & incentives 📝</p>
+            </div>
+
+            {/* step */}
+            <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
+                <p className="font-bold">Callbacks 📝</p>
+            </div>
+
+            {/* step */}
+            <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
+                <p className="font-bold">Free Flash Loans 🚧</p>
+            </div>
+
+            {/* step */}
+            <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
+                <p className="font-bold">Account Management 📝</p>
+            </div>
+
+            {/* step */}
+            <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
+                <p className="font-bold">Liquidation 🚧</p>
+            </div>
+
+            {/* step */}
+            <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
+                <p className="font-bold">API 🚧</p>
                 <p className="text-primary">Morpho data</p>
                 <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
                     <MorphoMarkets />
@@ -123,12 +152,12 @@ export default function Page() {
 
             {/* step */}
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
-                <p className="font-bold">📝 Morpho SDK</p>
+                <p className="font-bold">Morpho SDK 📝</p>
             </div>
 
             {/* step */}
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
-                <p className="font-bold">🚧 Using Etherscan</p>
+                <p className="font-bold">Using Etherscan 🚧</p>
             </div>
         </PageWrapper>
     )
