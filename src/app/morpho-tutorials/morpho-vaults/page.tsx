@@ -137,6 +137,31 @@ export default function Page() {
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>deposit 1 USDC tx hash</p>
                 </LinkWithIcon>
+
+                {/* 5 */}
+                <p className="text-primary">[...] - Supply ZRO</p>
+                <LinkWithIcon href="https://basescan.org/tx/0xa75ee0ece0c59cf77787c431b04d690740cccc6fd978f9357fc4ddbb29051750">
+                    <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
+                    <p>Approve Morpho for 10 ZRO tx hash</p>
+                </LinkWithIcon>
+                <PreJson>
+                    {JSON.stringify(
+                        {
+                            loanToken: ZRO_USDC_CONFIG.baseUSDC,
+                            collateralToken: ZRO_USDC_CONFIG.baseZRO,
+                            oracle: ZRO_USDC_CONFIG.baseZROUSDCMorphoChainlinkOracleV2,
+                            irm: ZRO_USDC_CONFIG.baseAdaptiveCurveIrm,
+                            lltv: '625000000000000000',
+                        },
+                        null,
+                        2,
+                    )}
+                </PreJson>
+                <LinkWithIcon href="https://basescan.org/tx/0x8c5f334be56bcd339ff0f9653f2a5b23472deb7db84d160875a1fb5e31a377d4">
+                    <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
+                    <p>Supply 10 ZRO tx hash</p>
+                </LinkWithIcon>
+                <p>Borrow tx reverted</p>
             </div>
 
             {/* step */}
