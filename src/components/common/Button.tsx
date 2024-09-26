@@ -35,8 +35,8 @@ export default function Button(props: InterfaceButtonProps) {
             className={cn(`flex items-center gap-2.5 rounded-lg border border-transparent bg-gray-800 px-2.5 py-1 w-fit`, {
                 'cursor-wait': loading,
                 'cursor-not-allowe text-gray-600': props.disabled,
-                'hover:border-teal-400 hover:text-teal-400': !props.disabled,
-                'border-teal-400 text-teal-400': props.focused,
+                'hover:border-primary hover:text-primary': !props.disabled,
+                'border-primary text-primary': props.focused,
             })}
             onClick={handleClick}
             disabled={loading || props.disabled}

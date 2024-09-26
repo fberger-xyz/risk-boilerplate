@@ -7,6 +7,7 @@ export enum AppPagePaths {
     MORPHO_TUTORIALS_PUBLIC_ALLOCATOR = '/morpho-tutorials/public-allocator',
     MORPHO_TUTORIALS_REWARDS = '/morpho-tutorials/rewards',
     MORPHO_TUTORIALS_OPTIMIZERS = '/morpho-tutorials/optimizers',
+    TEST = '/test',
 }
 
 export enum AppThemes {

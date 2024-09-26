@@ -70,6 +70,12 @@ export const useAppStore = create<{
                 },
             ],
         },
+        {
+            name: 'Test',
+            path: AppPagePaths.TEST,
+            enabled: true,
+            sublinks: [],
+        },
     ],
     actions: {},
     computeds: {},

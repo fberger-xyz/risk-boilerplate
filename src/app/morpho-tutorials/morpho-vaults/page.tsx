@@ -1,7 +1,7 @@
 import IconWrapper from '@/components/common/IconWrapper'
 import LinkWithIcon from '@/components/common/LinkWithIcon'
 import PageWrapper from '@/components/common/PageWrapper'
-import PreJson from '@/components/common/PreJson'
+import JsonField from '@/components/common/JsonField'
 import { ZRO_USDC_CONFIG } from '@/config/zro-usdc.config'
 import { IconIds } from '@/enums'
 
@@ -16,7 +16,7 @@ export default function Page() {
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
                 <p className="font-bold">Become a curator / vault creation ❌</p>
                 <p className="text-primary">base ZRO/USDC vault</p>
-                <PreJson>
+                <JsonField>
                     {JSON.stringify(
                         {
                             initialOwner: ZRO_USDC_CONFIG.me,
@@ -29,7 +29,7 @@ export default function Page() {
                         null,
                         2,
                     )}
-                </PreJson>
+                </JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x29cc9daad3b83d17a7c83052bd1c647c9d5cdda32532b9e529c3a3e4abbe9156">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>createMetaMorpho tx hash</p>
@@ -44,7 +44,7 @@ export default function Page() {
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
                 <p className="font-bold">Become a curator / vault creation ✅</p>
                 <p className="text-primary">base ZRO/USDC vault</p>
-                <PreJson>
+                <JsonField>
                     {JSON.stringify(
                         {
                             initialOwner: ZRO_USDC_CONFIG.me,
@@ -57,7 +57,7 @@ export default function Page() {
                         null,
                         2,
                     )}
-                </PreJson>
+                </JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x99c2b627b431458f8a6d729fb8282090a76dae0698aaaffaf7aa78d950666960">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>createMetaMorpho tx hash</p>
@@ -73,7 +73,7 @@ export default function Page() {
                 <p className="font-bold">Become a curator / setup ✅</p>
                 {/* 1 */}
                 <p className="text-primary">1 - Submit the cap</p>
-                <PreJson>
+                <JsonField>
                     {JSON.stringify(
                         {
                             marketParams: {
@@ -88,7 +88,7 @@ export default function Page() {
                         null,
                         2,
                     )}
-                </PreJson>
+                </JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x0905e958cb3616a6e064eb223e65326fe45d3a04c2582d3cd320c5859be668a2">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>submitCap tx hash</p>
@@ -96,7 +96,7 @@ export default function Page() {
 
                 {/* 2 */}
                 <p className="text-primary">2 - Accept the cap ✅</p>
-                <PreJson>
+                <JsonField>
                     {JSON.stringify(
                         {
                             loanToken: ZRO_USDC_CONFIG.baseUSDC,
@@ -108,7 +108,7 @@ export default function Page() {
                         null,
                         2,
                     )}
-                </PreJson>
+                </JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x5d4786d103f471c0f5b1e3bdc1e7449d2748d5026605f6b6e9b47429753ef042">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>acceptCap tx hash</p>
@@ -116,7 +116,7 @@ export default function Page() {
 
                 {/* 3 */}
                 <p className="text-primary">3 - Set the Supply Queue ⌛</p>
-                <PreJson>{JSON.stringify([ZRO_USDC_CONFIG.marketId], null, 2)}</PreJson>
+                <JsonField>{JSON.stringify([ZRO_USDC_CONFIG.marketId], null, 2)}</JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x492047f0d183490d091844dcf88b19de2201c06d8bbde5a973c566764e7270b7">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>setSupplyQueue tx hash</p>
@@ -144,7 +144,7 @@ export default function Page() {
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>Approve Morpho for 10 ZRO tx hash</p>
                 </LinkWithIcon>
-                <PreJson>
+                <JsonField>
                     {JSON.stringify(
                         {
                             loanToken: ZRO_USDC_CONFIG.baseUSDC,
@@ -156,7 +156,7 @@ export default function Page() {
                         null,
                         2,
                     )}
-                </PreJson>
+                </JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x8c5f334be56bcd339ff0f9653f2a5b23472deb7db84d160875a1fb5e31a377d4">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>Supply 10 ZRO tx hash</p>

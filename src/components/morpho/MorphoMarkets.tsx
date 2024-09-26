@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@apollo/client'
-import PreJson from '../common/PreJson'
+import JsonField from '../common/JsonField'
 import { GET_MORPHO_MARKETS } from '@/queries/get-morpho-markets.queries'
 import { useEffect } from 'react'
 import { Market } from '@morpho-org/blue-sdk'
@@ -37,7 +37,7 @@ export default function MorphoMarkets() {
             ) : query.error ? (
                 <p>Error: {JSON.stringify(query.error)}</p>
             ) : query.data ? (
-                <PreJson>{JSON.stringify(query.data, null, 2)}</PreJson>
+                <JsonField>{JSON.stringify(query.data, null, 2)}</JsonField>
             ) : (
                 <p>No data...</p>
             )}

@@ -1,7 +1,7 @@
 import IconWrapper from '@/components/common/IconWrapper'
 import LinkWithIcon from '@/components/common/LinkWithIcon'
 import PageWrapper from '@/components/common/PageWrapper'
-import PreJson from '@/components/common/PreJson'
+import JsonField from '@/components/common/JsonField'
 import MorphoMarkets from '@/components/morpho/MorphoMarkets'
 import { ZRO_USDC_CONFIG } from '@/config/zro-usdc.config'
 import { IconIds } from '@/enums'
@@ -25,7 +25,7 @@ export default function Page() {
                     <IconWrapper icon={IconIds.CONTRACT} className="h-4 w-4" />
                     <p>USDC</p>
                 </LinkWithIcon>
-                <PreJson>
+                <JsonField>
                     {JSON.stringify(
                         {
                             // mainnet: sDAI/USDC oracle
@@ -61,7 +61,7 @@ export default function Page() {
                         null,
                         2,
                     )}
-                </PreJson>
+                </JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x727523fcaee23bc1b43c23f91e81e335be3db0e09570ffe84f81902c05a80597">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>createMorphoChainlinkOracleV2 tx hash</p>
@@ -76,7 +76,7 @@ export default function Page() {
             <div className="flex w-full flex-col gap-1 border border-gray-500 p-2">
                 <p className="font-bold">Create a market ✅</p>
                 <p className="text-primary">base ZRO/USDC market</p>
-                <PreJson>
+                <JsonField>
                     {JSON.stringify(
                         {
                             loanToken: ZRO_USDC_CONFIG.baseUSDC, // base USDC
@@ -88,7 +88,7 @@ export default function Page() {
                         null,
                         2,
                     )}
-                </PreJson>
+                </JsonField>
                 <LinkWithIcon href="https://basescan.org/tx/0x73686f363c296d53d051a8915e751309c4212dffab3299558b64aede4c1f5b73">
                     <IconWrapper icon={IconIds.TRANSACTION} className="h-4 w-4" />
                     <p>createMarket tx hash</p>
