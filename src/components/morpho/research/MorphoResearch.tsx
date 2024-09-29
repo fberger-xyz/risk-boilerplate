@@ -4,7 +4,7 @@ import { Tooltip } from 'react-tooltip'
 import LinkWithIcon from '@/components/common/LinkWithIcon'
 import PageWrapper from '@/components/common/PageWrapper'
 import { MorphoMarket } from '@/interfaces'
-import { cn, shortenAddress, shortenStr } from '@/utils'
+import { shortenAddress, shortenStr } from '@/utils'
 import numeral from 'numeral'
 import { ReactNode, useEffect, useState } from 'react'
 
@@ -17,22 +17,29 @@ function MarketOverviewRow(props: {
     utilisation: ReactNode
     lltv: ReactNode
 }) {
-    const SPANS = {
-        index: 1,
-        supplyApy: 1,
-        pair: 3,
-        borrowApy: 1,
-        utilisation: 2,
-        lltv: 1,
-    }
+    // const SPANS = {
+    //     index: 1,
+    //     supplyApy: 1,
+    //     pair: 3,
+    //     borrowApy: 1,
+    //     utilisation: 2,
+    //     lltv: 1,
+    // }
     return (
-        <div className={cn(`hover:text-primary grid w-full grid-cols-${Object.values(SPANS).reduce((acc, curr) => (acc += curr), 0)} gap-2 text-xs`)}>
-            <div className={cn(`col-span-${SPANS.index} flex`)}>{props.index}</div>
-            <div className={cn(`col-span-${SPANS.supplyApy} flex`)}>{props.supplyApy}</div>
-            <div className={cn(`col-span-${SPANS.pair} flex`)}>{props.pair}</div>
-            <div className={cn(`col-span-${SPANS.borrowApy} flex`)}>{props.borrowApy}</div>
-            <div className={cn(`col-span-${SPANS.lltv} flex`)}>{props.lltv}</div>
-            <div className={cn(`col-span-${SPANS.utilisation} flex`)}>{props.utilisation}</div>
+        // <div className={cn(`hover:text-primary grid w-full grid-cols-${Object.values(SPANS).reduce((acc, curr) => (acc += curr), 0)} gap-2 text-xs`)}>
+        <div className="grid w-full grid-cols-9 gap-2 text-xs hover:text-primary">
+            <div className="col-span-1 flex">{props.index}</div>
+            {/* <div className={cn(`col-span-${SPANS.index} flex`)}>{props.index}</div> */}
+            <div className="col-span-1 flex">{props.supplyApy}</div>
+            {/* <div className={cn(`col-span-${SPANS.supplyApy} flex`)}>{props.supplyApy}</div> */}
+            <div className="col-span-3 flex">{props.pair}</div>
+            {/* <div className={cn(`col-span-${SPANS.pair} flex`)}>{props.pair}</div> */}
+            <div className="col-span-1 flex">{props.borrowApy}</div>
+            {/* <div className={cn(`col-span-${SPANS.borrowApy} flex`)}>{props.borrowApy}</div> */}
+            <div className="col-span-1 flex">{props.lltv}</div>
+            {/* <div className={cn(`col-span-${SPANS.lltv} flex`)}>{props.lltv}</div> */}
+            <div className="col-span-2 flex">{props.utilisation}</div>
+            {/* <div className={cn(`col-span-${SPANS.utilisation} flex`)}>{props.utilisation}</div> */}
         </div>
     )
 }
