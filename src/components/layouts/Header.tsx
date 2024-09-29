@@ -17,6 +17,7 @@ export default function Header(props: { className?: string }) {
                     <HeaderButton pagePath={AppPagePaths.HOME} />
                     <HeaderButton pagePath={AppPagePaths.MORPHO_TUTORIALS} />
                     <HeaderButton pagePath={AppPagePaths.TEST} />
+                    <HeaderButton pagePath={AppPagePaths.LENDING} />
                 </div>
             </div>
             <div className="flex items-center gap-2">

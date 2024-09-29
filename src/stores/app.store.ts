@@ -76,6 +76,12 @@ export const useAppStore = create<{
             enabled: true,
             sublinks: [],
         },
+        {
+            name: 'Lending',
+            path: AppPagePaths.LENDING,
+            enabled: true,
+            sublinks: [],
+        },
     ],
     actions: {},
     computeds: {},

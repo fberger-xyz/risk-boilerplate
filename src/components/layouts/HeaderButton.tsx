@@ -16,7 +16,6 @@ export default function HeaderButton(props: { pagePath: AppPagePaths; disabled?:
         else return pathname.startsWith(props.pagePath)
     }
     let link: undefined | InterfaceAppLink = undefined
-    // todo: put this fn in recursive mode
     for (let linkIndex = 0; linkIndex < links.length && !link; linkIndex++) {
         if (links[linkIndex].path === props.pagePath) link = links[linkIndex]
         for (let sublinkIndex = 0; sublinkIndex < links[linkIndex].sublinks.length && !link; sublinkIndex++) {
